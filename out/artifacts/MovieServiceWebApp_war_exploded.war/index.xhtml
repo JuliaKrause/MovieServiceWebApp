@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+   <title>Movies</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+</head>
+<body>
+<ui:repeat value="#{reqMovie.allMovies}" var="movie">
+   <h1>
+      <h:outputText value="#{movie.title}"/>
+   </h1>
+   <p>
+      <h:outputText value="#{movie.description}"/>
+   </p>
+</ui:repeat>
+</body>
+</html>
