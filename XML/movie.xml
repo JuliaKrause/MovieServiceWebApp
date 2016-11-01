@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<movie title="Movie1" description="long description or short description" length="123" releaseyear="2015">
+    <movieId>0</movieId>
+    <actors>
+        <actor firstname="Anna" lastname="Apfelbaum" sex="f" birthdate="2016-11-01T19:36:35.077+01:00"/>
+        <actor firstname="Bernie" lastname="Beaver" sex="m" birthdate="2016-11-01T19:36:35.077+01:00"/>
+    </actors>
+    <studio name="Studio1" countrycode="at" postcode="1090"/>
+</movie>

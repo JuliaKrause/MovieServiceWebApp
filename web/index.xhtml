@@ -14,6 +14,21 @@
    <p>
       <h:outputText value="#{movie.description}"/>
    </p>
+   <p>
+      <h:outputText value="#{movie.length}"/>
+   </p>
+   <p>
+      <h:outputText value="#{movie.releaseYear}"/>
+   </p>
+   <p>
+      <h:outputText value="#{movie.studio.name}"/>
+   </p>
+   <p>
+      <h:outputText value="#{movie.actorList[0].lastName}"/>
+   </p>
+   <p>
+      <h:outputText value="#{movie.actorList[1].lastName}"/>
+   </p>
 </ui:repeat>
 </body>
 </html>

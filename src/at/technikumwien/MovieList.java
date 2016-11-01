@@ -1,0 +1,38 @@
+package at.technikumwien;
+
+import javax.xml.bind.annotation.*;
+import java.util.List;
+import java.util.Vector;
+
+/**
+ * Created by regula on 01.11.16.
+ */
+@XmlRootElement(name="movies")
+@XmlAccessorType(XmlAccessType.FIELD)
+
+public class MovieList {
+	@XmlElement(name="movie")
+	private List<Movie> MovieList;
+
+	public MovieList() {
+	}
+
+	public MovieList(List<Movie> movieList) {
+		MovieList = movieList;
+	}
+
+	public List<Movie> getMovieList() {
+		return MovieList;
+	}
+
+	public void setMovieList(List<Movie> movieList) {
+		MovieList = movieList;
+	}
+
+	@Override
+	public String toString() {
+		return "MovieList{" +
+				"MovieList=" + MovieList +
+				'}';
+	}
+}

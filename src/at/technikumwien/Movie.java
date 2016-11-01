@@ -1,32 +1,58 @@
+package at.technikumwien;
+
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static javax.persistence.FetchType.EAGER;
 
 /**
  * Created by Julia on 30.10.2016.
  */
 @Entity
-@Table
-@XmlRootElement
+@Table //nur angeben, wenn man die Tabelle umbenennen will
+@NamedQueries({ @NamedQuery(name="Movie.selectAll", query="SELECT n FROM Movie n"),
+                @NamedQuery(name="Movie.findByTitleMov", query="SELECT n FROM Movie n WHERE n.title LIKE '%Mov%'")})
 
-@NamedQuery(name="Movie.selectAll", query="Select n FROM Movie n")
+//@NamedQuery((name="Movie.selectAll", query="Select n FROM Movie n"), name="Movie.find", query="Select n FROM Movie n WHERE Movie.title LIKE 'Mov'"))
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 
 public class Movie {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)//better: AUTO???
     private int movieId;
 
+    @Basic
+    @Column(nullable = false)
+	@XmlAttribute
     private String title;
+
+    @Basic
+	@XmlAttribute
     private String description;
-    private int length;
+
+    @Basic
+	@XmlAttribute
+    private Integer length;
+
+    @Basic
+    @Column(nullable = false)
+	@XmlAttribute(name="releaseyear")
     private int releaseYear;
 
-    @ManyToMany
+    //may also need "mapped by"
+    @ManyToMany(targetEntity=Actor.class, fetch=EAGER)
+    @Column(nullable = false)
+	@XmlElementWrapper(name="actors")
+	@XmlElement(name="actor")
     private List<Actor> actorList;
-
+    
     @ManyToOne
+    //@Column(nullable = false)
+	@XmlElement
     private Studio studio;
 
     public Movie() {
@@ -65,11 +91,11 @@ public class Movie {
         this.description = description;
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(Integer length) {
         this.length = length;
     }
 

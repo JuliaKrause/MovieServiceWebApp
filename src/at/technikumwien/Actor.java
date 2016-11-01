@@ -1,4 +1,9 @@
+package at.technikumwien;
+
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
 /**
@@ -6,14 +11,27 @@ import java.util.Date;
  */
 @Entity
 @Table
+
+@NamedQuery(name="Actor.selectAll", query="Select n FROM Actor n")
+
+@XmlType(propOrder={"firstName", "lastName", "sex", "birthDate"})
 public class Actor {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int ActorId;
 
+    @Basic
     private String firstName;
+
+    @Basic
+    @Column(nullable = false)
     private String lastName;
+
+    @Basic
     private String sex;
+
+    @Basic
+    @Column(nullable = false)
     private Date birthDate;
 
     public Actor() {
@@ -26,13 +44,14 @@ public class Actor {
         this.birthDate = birthDate;
     }
 
-    public int getActorId() {
+/*    public int getActorId() {
         return ActorId;
     }
 
     public void setActorId(int actorId) {
         ActorId = actorId;
-    }
+    }*/
+	@XmlAttribute(name="firstname")
 
     public String getFirstName() {
         return firstName;
@@ -42,6 +61,7 @@ public class Actor {
         this.firstName = firstName;
     }
 
+	@XmlAttribute(name="lastname")   
     public String getLastName() {
         return lastName;
     }
@@ -50,6 +70,7 @@ public class Actor {
         this.lastName = lastName;
     }
 
+	@XmlAttribute(name="sex")
     public String getSex() {
         return sex;
     }
@@ -58,6 +79,7 @@ public class Actor {
         this.sex = sex;
     }
 
+	@XmlAttribute(name="birthdate")
     public Date getBirthDate() {
         return birthDate;
     }
