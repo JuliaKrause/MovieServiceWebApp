@@ -14,7 +14,7 @@ import java.util.Date;
 
 @NamedQuery(name="Actor.selectAll", query="Select n FROM Actor n")
 
-@XmlType(propOrder={"firstName", "lastName", "sex", "birthDate"})
+@XmlType(propOrder={"actorId", "firstName", "lastName", "sex", "birthDate"})
 public class Actor {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -44,13 +44,14 @@ public class Actor {
         this.birthDate = birthDate;
     }
 
-/*    public int getActorId() {
+    public int getActorId() {
         return ActorId;
     }
 
     public void setActorId(int actorId) {
         ActorId = actorId;
-    }*/
+    }
+
 	@XmlAttribute(name="firstname")
 
     public String getFirstName() {

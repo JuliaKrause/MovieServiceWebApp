@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlType;
 @Table
 
 @NamedQuery(name="Studio.selectAll", query="Select n FROM Studio n")
-@XmlType(propOrder = {"name", "countryCode", "postCode"})
+@XmlType(propOrder = {"studioId", "name", "countryCode", "postCode"})
 public class Studio {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -38,14 +38,14 @@ public class Studio {
         this.postCode = postCode;
     }
 
-/*    public int getStudioId() {
+    public int getStudioId() {
         return studioId;
     }
 
     public void setStudioId(int studioId) {
         this.studioId = studioId;
     }
-*/
+
 	@XmlAttribute
     public String getName() {
         return name;
