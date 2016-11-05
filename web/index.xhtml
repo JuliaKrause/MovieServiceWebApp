@@ -23,12 +23,11 @@
    <p>
       <h:outputText value="#{movie.studio.name}"/>
    </p>
-   <p>
-      <h:outputText value="#{movie.actorList[0].lastName}"/>
-   </p>
-   <p>
-      <h:outputText value="#{movie.actorList[1].lastName}"/>
-   </p>
+   <ui:repeat value="#{movie.actorList}" var="actor">
+      <p>
+         <h:outputText value="#{actor.firstName} #{actor.lastName}"/>
+      </p>
+   </ui:repeat>
 </ui:repeat>
 </body>
 </html>

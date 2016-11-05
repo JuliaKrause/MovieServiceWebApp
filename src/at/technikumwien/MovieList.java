@@ -1,8 +1,9 @@
 package at.technikumwien;
 
+import at.technikumwien.entity.Movie;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * Created by regula on 01.11.16.

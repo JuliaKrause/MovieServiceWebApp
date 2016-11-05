@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:tec="http://service.technikumwien.at/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<tec:importMovies>
+			<arg0>
+				<![CDATA[
+	  	<movies>
+            <movie title="Movie1" description="jo, ganz ok" length="123" releaseyear="2014">
+               <actors>
+                  <actor firstname="Fredi" lastname="Müller" sex="m" birthdate="2008-10-13T00:00:00+02:00"/>
+                  <actor firstname="Stef" lastname="Smith" sex="f" birthdate="2001-12-03T00:00:00+01:00"/>
+               </actors>
+               <studio name="Studio1" countrycode="at" postcode="1234"/>
+            </movie>
+            <movie title="Movie2" description="i glaub ned." length="56" releaseyear="2008">
+               <actors>
+                  <actor firstname="Billy" lastname="Byrd" sex="m" birthdate="1981-03-25T00:00:00+01:00"/>
+                  <actor firstname="Anna" lastname="Apfelbaum" sex="f" birthdate="1973-06-14T00:00:00+01:00"/>
+                  <actor firstname="Stef" lastname="Smith" sex="f" birthdate="2001-12-03T00:00:00+01:00"/>
+               </actors>
+               <studio name="Studio2" countrycode="ch" postcode="2345"/>
+            </movie>
+            <movie title="Movie3" description="faaaad" length="243" releaseyear="1973">
+               <actors>
+                  <actor firstname="Anna" lastname="Apfelbaum" sex="f" birthdate="1973-06-14T00:00:00+01:00"/>
+                  <actor firstname="Billy" lastname="Byrd" sex="m" birthdate="1981-03-25T00:00:00+01:00"/>
+               </actors>
+               <studio name="Studio3" countrycode="de" postcode="1354"/>
+            </movie>
+         </movies>
+	      	]]>
+			</arg0>
+		</tec:importMovies>
+	</soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<movies>
+    <movie title="Movie1" description="long description or short description" length="123" releaseyear="2015">
+        <actors>
+            <actor firstname="Anna" lastname="Apfelbaum" sex="f" birthdate="2016-11-02T18:05:52.312+01:00"/>
+            <actor firstname="Bernie" lastname="Beaver" sex="m" birthdate="2016-11-02T18:05:52.312+01:00"/>
+        </actors>
+        <studio name="Studio1" countrycode="at" postcode="1090"/>
+    </movie>
+    <movie title="Movie2" description="shorter description" length="321" releaseyear="2008">
+        <actors>
+            <actor firstname="Anna" lastname="Apfelbaum" sex="f" birthdate="2016-11-02T18:05:52.312+01:00"/>
+            <actor firstname="Bernie" lastname="Beaver" sex="m" birthdate="2016-11-02T18:05:52.312+01:00"/>
+        </actors>
+        <studio name="Studio1" countrycode="at" postcode="1090"/>
+    </movie>
+</movies>

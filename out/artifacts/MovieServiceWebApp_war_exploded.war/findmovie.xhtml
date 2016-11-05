@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <title>Movies By Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+</head>
+<body>
+<ui:repeat value="#{findMovie.allMovies}" var="movie">
+    <h1>
+        <h:outputText value="#{movie.title}"/>
+    </h1>
+    <p>
+        <h:outputText value="#{movie.description}"/>
+    </p>
+    <p>
+        <h:outputText value="#{movie.length}"/>
+    </p>
+    <p>
+        <h:outputText value="#{movie.releaseYear}"/>
+    </p>
+    <p>
+        <h:outputText value="#{movie.studio.name}"/>
+    </p>
+    <ui:repeat value="#{movie.actorList}" var="actor">
+        <p>
+            <h:outputText value="#{actor.firstName} #{actor.lastName}"/>
+        </p>
+    </ui:repeat>
+</ui:repeat>
+</body>
+</html>
