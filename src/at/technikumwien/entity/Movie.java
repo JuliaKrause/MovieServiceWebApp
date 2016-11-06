@@ -20,7 +20,7 @@ import static javax.persistence.FetchType.EAGER;
 
 public class Movie {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)//better: AUTO???
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
 	@XmlTransient
     private long movieId;
 

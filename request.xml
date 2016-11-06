@@ -8,7 +8,7 @@
 	  	<movies>
             <movie title="Movie1" description="jo, ganz ok" length="123" releaseyear="2014">
                <actors>
-                  <actor firstname="Fredi" lastname="Müller" sex="m" birthdate="2008-10-13T00:00:00+02:00"/>
+                  <actor firstname="Fredi" lastname="Mueller" sex="m" birthdate="2008-10-13T00:00:00+02:00"/>
                   <actor firstname="Stef" lastname="Smith" sex="f" birthdate="2001-12-03T00:00:00+01:00"/>
                </actors>
                <studio name="Studio1" countrycode="at" postcode="1234"/>

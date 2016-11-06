@@ -48,8 +48,8 @@ public class MovieManaged {
         actorList2.add(new Actor("Billy", "Byrd", "m", new Date()));
         //actorList2.add(new Actor("Heini", "Maier", "male", new Date()));
         List<Movie> movieList = new ArrayList<>();
-        movieList.add(new Movie("MovieX", "huh", 100, 1990, actorList, new Studio("Studio1", "at", "1234")));
-        movieList.add(new Movie("MovieY", "huh", 100, 1990, actorList, new Studio("Studio1", "at", "1234")));
+        movieList.add(new Movie("MovieC", "huh", 100, 1990, actorList, new Studio("Studio1", "at", "1234")));
+        movieList.add(new Movie("MovieD", "huh", 100, 1990, actorList, new Studio("Studio1", "at", "1234")));
 
         movieService.importMovies(movieList);
 

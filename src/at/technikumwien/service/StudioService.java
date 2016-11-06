@@ -4,6 +4,7 @@ import at.technikumwien.entity.Actor;
 import at.technikumwien.entity.Studio;
 
 import javax.ejb.EJBException;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by regula on 02.11.16.
  */
+@Stateless
 public class StudioService {
 
 	@PersistenceContext

@@ -3,6 +3,7 @@ package at.technikumwien.service;
 import at.technikumwien.entity.Actor;
 
 import javax.ejb.EJBException;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by regula on 02.11.16.
  */
+@Stateless
 public class ActorService {
 
 	@PersistenceContext
@@ -46,10 +48,10 @@ public class ActorService {
 
 	public Boolean existsActor(Actor actor) {
 		// todo: geht das nicht irgendwie mit named Queries?
-		System.out.println("**********************************************************");
+		/*System.out.println("**********************************************************");
 		System.out.println(em.toString());
 		System.out.println(em.getEntityManagerFactory());
-		System.out.println("**********************************************************");
+		System.out.println("**********************************************************");*/
 		List<Object> rl = em.createQuery("SELECT n FROM Actor n WHERE " +
 				"n.firstName ='" + actor.getFirstName() + "' and " +
 				"n.lastName ='" + actor.getLastName() + "' and " +

@@ -27,10 +27,15 @@ public class XmlConverter {
 		Source source = new StreamSource(soapInput);
 		JAXBElement<MovieList> jaxbElement = null;
 		try {
-			jaxbElement = unmarshaller.unmarshal(source, MovieList.class);
+			jaxbElement = unmarshaller.unmarshal(source, MovieList.class);//this is the line where the problem is
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+		System.out.println("jaxbElement: ");
+		System.out.println(jaxbElement);//jaxbElement is null
+		System.out.println("jaxbElementValue: ");
+		System.out.println(jaxbElement.getValue());//geht dann natuerlich nicht
+		//das Ganze hat nichts damit zu tun, ob die anderen files im src > xml folder vorhanden sind oder nicht
 		MovieList movieList = jaxbElement.getValue();
 		return movieList;
 	}
