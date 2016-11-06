@@ -24,7 +24,6 @@ public class MovieManaged {
 
     public List<Movie> getAllMovies() {
         return movieService.getAllMovies();
-        //return movieService.searchMoviesByTitle("1");
 
         /*int year = 1973;
         int month = 6;

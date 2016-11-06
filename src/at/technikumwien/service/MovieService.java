@@ -43,12 +43,6 @@ public class MovieService {
         return em.createQuery("SELECT n FROM Movie n WHERE n.title LIKE '%" + searchString + "%'").getResultList();
     }
 
-    //warum schreibt er mir jeden Film doppelt in die db? (naja, es gibt task 1 und task 3, warum auch immer)
-    //wenn mehrere Filme hinzugefuegt werden sollen und einer nicht geht, dann wird aber anscheinend denen,
-    //die gehen wuerden, eine Id gegeben, denn beim naechsten erfolgreichen Hinzufuegen von Filmen
-    //sieht man in der db, dass Ids uebersprungen wurden
-    //wie kann ich eine Methode importMovies() in MovieManaged aufrufen? (verstehe ich immer noch nicht)
-
     //Ein Film darf nur dann importiert werden, wenn alle zugehörigen Schauspieler
     //und das zugehörige Studio bereits in der Datenbank vorhanden sind
     //für jeden tatsächlich vorhandenen Schauspieler hole ich mir aus der Datenbank die Id
@@ -57,6 +51,10 @@ public class MovieService {
     //das scheint zu reichen, damit der entity manager das persist machen kann
     //die studio id erscheint als Fremdschluessel in der Movie Tabelle
     //die entsprechende Zeile wird in der movie_actor Tabelle hinzugefügt
+    //wenn mehrere Filme hinzugefuegt werden sollen und einer nicht geht, dann wird aber anscheinend denen,
+    //die gehen wuerden, eine Id gegeben, denn beim naechsten erfolgreichen Hinzufuegen von Filmen
+    //sieht man in der db, dass Ids uebersprungen wurden
+
     public void importMovies(List<Movie> movieList) {
     	for(Movie movie : movieList) {
             System.out.println("MOVIE IN IMPORT LIST " + movie.toString());
