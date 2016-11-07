@@ -12,8 +12,7 @@ import java.util.Date;
 @Entity
 @Table
 
-@NamedQuery(name="Actor.selectAll", query="Select n FROM Actor n")
-
+@NamedQuery(name="Actor.select", query="Select a FROM Actor a WHERE a.firstName = :firstName and a.lastName = :lastName and a.sex = :sex and a.birthDate = :birthDate")
 @XmlType(propOrder={"firstName", "lastName", "sex", "birthDate"})
 public class Actor {
     @Id

@@ -6,6 +6,7 @@ import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
@@ -21,15 +22,16 @@ public class ActorService {
 	public ActorService() {
 	}
 
-	public long getActorIdFromDB (Actor actor) {
-		Actor actorFromDB = (Actor) em.createQuery("SELECT n FROM Actor n WHERE " +
-				"n.firstName ='" + actor.getFirstName() + "' and " +
-				"n.lastName ='" + actor.getLastName() + "' and " +
-				"n.sex ='" + actor.getSex() + "' and " +
-				"n.birthDate = '" + new java.sql.Date(actor.getBirthDate().getTime()) + "'")
-				.getSingleResult();
-		long actorIdFromDB = actorFromDB.getActorId();
-		return actorIdFromDB;
+	public Actor getActorFromDB (Actor actor) {
+		Query query = em.createNamedQuery("Actor.select", Actor.class)
+				.setParameter("firstName", actor.getFirstName())
+				.setParameter("lastName", actor.getLastName())
+				.setParameter("sex", actor.getSex())
+				.setParameter("birthDate", new java.sql.Date(actor.getBirthDate().getTime()));
+
+		Actor actorFromDB = (Actor) query.getSingleResult();
+
+		return actorFromDB;
 	}
 
 
@@ -38,26 +40,21 @@ public class ActorService {
 			if(!existsActor(actor)){
 				throw new EJBException("can't find actor");
 			} else {
-				long actorId = getActorIdFromDB(actor);
-				System.out.println("ACTOR ID IS: ");
-				System.out.println(actorId);
-				actor.setActorId(actorId);
+				Actor managedActor = getActorFromDB(actor);
+				actorList.set(actorList.indexOf(actor), managedActor);
 			}
 		}
 	}
 
 	public Boolean existsActor(Actor actor) {
-		// todo: geht das nicht irgendwie mit named Queries?
-		/*System.out.println("**********************************************************");
-		System.out.println(em.toString());
-		System.out.println(em.getEntityManagerFactory());
-		System.out.println("**********************************************************");*/
-		List<Object> rl = em.createQuery("SELECT n FROM Actor n WHERE " +
-				"n.firstName ='" + actor.getFirstName() + "' and " +
-				"n.lastName ='" + actor.getLastName() + "' and " +
-				"n.sex ='" + actor.getSex() + "' and " +
-				"n.birthDate = '" + new java.sql.Date(actor.getBirthDate().getTime()) + "'")
-				.getResultList();
+		Query query = em.createNamedQuery("Actor.select", Actor.class)
+				.setParameter("firstName", actor.getFirstName())
+				.setParameter("lastName", actor.getLastName())
+				.setParameter("sex", actor.getSex())
+				.setParameter("birthDate", new java.sql.Date(actor.getBirthDate().getTime()));
+
+		List<Object> rl = query.getResultList();
+
 		if (rl.size() == 1) {
 			return true;
 		} else {

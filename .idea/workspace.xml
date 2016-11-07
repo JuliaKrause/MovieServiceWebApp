@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27c355ff-f52a-49dd-b165-7ba0ba899c4e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/managed/ImportMovieManaged.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/managed/ImportMovieManaged.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/at/technikumwien/managed/ImportMovieManaged.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/managed/FindMovieManaged.class" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/managed/FindMovieManaged.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/managed/FindMovieManaged.class" afterPath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/managed/FindMovieManaged.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/entity/Actor.class" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/entity/Actor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/entity/Studio.class" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/entity/Studio.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/service/ActorService.class" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/service/ActorService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/service/MovieService.class" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/service/MovieService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/service/StudioService.class" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/WEB-INF/classes/at/technikumwien/service/StudioService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/entity/Actor.class" afterPath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/entity/Actor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/entity/Studio.class" afterPath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/entity/Studio.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/service/ActorService.class" afterPath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/service/ActorService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/service/MovieService.class" afterPath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/service/MovieService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/service/StudioService.class" afterPath="$PROJECT_DIR$/out/production/MovieServiceWebApp/at/technikumwien/service/StudioService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/findmovie.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/MovieServiceWebApp_war_exploded.war/findmovie.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/managed/FindMovieManaged.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/managed/FindMovieManaged.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/managed/MovieManaged.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/managed/MovieManaged.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/service/MovieService.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/service/MovieService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/findmovie.xhtml" afterPath="$PROJECT_DIR$/web/findmovie.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java" afterPath="$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java" />
     </list>
     <ignored path="MovieServiceWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,21 +52,91 @@
       <file leaf-file-name="MovieService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="177">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieManaged.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/managed/MovieManaged.java">
+      <file leaf-file-name="MovieWebService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <state relative-caret-position="238">
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieWebServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Actor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Studio.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudioService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Movie.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Movie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/request.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActorService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,23 +193,23 @@
         <option value="$PROJECT_DIR$/src/at/technikumwien/xml/MovieToXml.java" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/xml/XmlToMovie.java" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/xml/XmlToMovieList.java" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/managed/ActorManaged.java" />
         <option value="$PROJECT_DIR$/web/index.xhtml" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/xml/XmlConverter.java" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/entity/Movie.java" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java" />
         <option value="$PROJECT_DIR$/request.xml" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/managed/FindMovieManaged.java" />
         <option value="$PROJECT_DIR$/web/findmovie.xhtml" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/managed/ImportMovieManaged.java" />
-        <option value="$PROJECT_DIR$/src/at/technikumwien/service/MovieService.java" />
         <option value="$PROJECT_DIR$/src/at/technikumwien/managed/MovieManaged.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/service/MovieService.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java" />
+        <option value="$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -173,7 +250,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -192,9 +268,108 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="technikumwien" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="technikumwien" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="technikumwien" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MovieServiceWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="technikumwien" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -793,15 +968,17 @@
       <workItem from="1478345922696" duration="12628000" />
       <workItem from="1478359785291" duration="421000" />
       <workItem from="1478429344921" duration="16663000" />
+      <workItem from="1478508888429" duration="3200000" />
+      <workItem from="1478517283890" duration="3024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88709000" />
+    <option name="totallyTimeSpent" value="94933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -821,8 +998,8 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33388704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33388704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962063" sideWeight="0.48129675" order="0" side_tool="false" content_ui="combo" />
@@ -893,9 +1070,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -932,9 +1107,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -942,9 +1115,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -962,9 +1133,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,9 +1150,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,9 +1168,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,21 +1225,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1091,17 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,7 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
@@ -1124,53 +1265,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,18 +1277,10 @@
         <state relative-caret-position="133">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#441#442#0" expanded="false" />
+            <element signature="e#492#493#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/request.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,29 +1300,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/managed/ImportMovieManaged.java">
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/managed/ImportMovieManaged.java" />
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        <state relative-caret-position="238">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/managed/MovieManaged.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/request.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Actor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/entity/Studio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/StudioService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieWebService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieWebServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/MovieService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="177">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/managed/MovieManaged.java">
+    <entry file="file://$PROJECT_DIR$/src/at/technikumwien/service/ActorService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

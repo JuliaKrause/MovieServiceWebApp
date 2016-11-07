@@ -17,7 +17,7 @@ public interface MovieWebService {
     MovieList getAllMovies();
 
     @WebMethod
-	void importMovies(String xml);
+	void importMovies(List<Movie> movieList);
 	
 	@WebMethod
     MovieList searchMoviesByTitle(String String);

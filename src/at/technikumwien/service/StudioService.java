@@ -7,6 +7,7 @@ import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -21,39 +22,40 @@ public class StudioService {
 	public StudioService() {
 	}
 
-	public long getStudioIdFromDB (Studio studio) {
-		Studio studioFromDB = (Studio) em.createQuery("SELECT n FROM Studio n WHERE " +
-				"n.name ='" + studio.getName() + "' and " +
-				"n.countryCode ='" + studio.getCountryCode() + "' and " +
-				"n.postCode ='" + studio.getPostCode() + "'")
-				.getSingleResult();
-		long studioIdFromDB = studioFromDB.getStudioId();
-		return studioIdFromDB;
+	public Studio getStudioFromDB (Studio studio) {
+		Query query = em.createNamedQuery("Studio.select", Studio.class)
+				.setParameter("name", studio.getName())
+				.setParameter("countryCode", studio.getCountryCode())
+				.setParameter("postCode", studio.getPostCode());
+
+		Studio studioFromDB = (Studio) query.getSingleResult();
+
+		return studioFromDB;
 	}
 
-	public void checkStudio(Studio studio) {
+	public Studio checkStudio(Studio studio) {
 		if(!existsStudio(studio)) {
 			throw new EJBException("can't find studio");
 		} else {
-			long studioId = getStudioIdFromDB(studio);
-			System.out.println("Studio ID IS: ");
-			System.out.println(studioId);
-			studio.setStudioId(studioId);
+			Studio managedStudio = getStudioFromDB(studio);
+			return managedStudio;
 		}
 	}
 
 
 	public Boolean existsStudio(Studio studio) {
-		// todo: geht das nicht irgendwie mit named Queries?
-		List<Object> rl = em.createQuery("SELECT n FROM Studio n WHERE " +
-				"n.name ='" + studio.getName() + "' and " +
-				"n.countryCode ='" + studio.getCountryCode() + "' and " +
-				"n.postCode ='" + studio.getPostCode() + "'")
-				.getResultList();
+		Query query = em.createNamedQuery("Studio.select", Studio.class)
+				.setParameter("name", studio.getName())
+				.setParameter("countryCode", studio.getCountryCode())
+				.setParameter("postCode", studio.getPostCode());
+
+		List<Object> rl = query.getResultList();
+
 		if (rl.size() == 1) {
 			return true;
 		} else {
 			return false;
 		}
+
 	}
 }

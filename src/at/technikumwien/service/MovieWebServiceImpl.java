@@ -33,16 +33,17 @@ public class MovieWebServiceImpl implements MovieWebService {
     }
 
     @Override
-    public void importMovies(String xml) {
+    public void importMovies(List<Movie> movieList) {
 
-	XmlConverter converter = null;
+	/*XmlConverter converter = null;
 		try {
 			converter = new XmlConverter();
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
-		MovieList movielist = converter.convertToMovieList(xml);
-        service.importMovies(movielist.getMovieList());
+		MovieList movielist = converter.convertToMovieList(xml);*/
+        //service.importMovies(movielist.getMovieList());
+        service.importMovies(movieList);
 	}
 
     @Override
