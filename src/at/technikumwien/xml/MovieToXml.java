@@ -19,7 +19,7 @@ public class MovieToXml {
 		//create studio
 		Studio studio = new Studio("Studio1", "at", "1090");
 		//create movie
-		Movie movie = new Movie("Movie1", "long description or short description", 123, 2015, actors, studio);
+		Movie movie = new Movie("Movie1", "long description or short description", "Comedy", 123, 2015, studio, actors);
 
 		JAXBContext jaxbContext = JAXBContext.newInstance(Movie.class);
 		Marshaller marshaller = jaxbContext.createMarshaller();

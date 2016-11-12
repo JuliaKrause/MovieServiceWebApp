@@ -24,8 +24,8 @@ public class MovieListToXml {
 		Studio studio = new Studio("Studio1", "at", "1090");
 		//create movies
 		Vector<Movie> movies = new Vector<>();
-		Movie movie1 = new Movie("Movie1", "long description or short description", 123, 2015, actors, studio);
-		Movie movie2 = new Movie("Movie2", "shorter description", 321, 2008, actors, studio);
+		Movie movie1 = new Movie("Movie1", "long description or short description", "Comedy", 123, 2015, studio, actors);
+		Movie movie2 = new Movie("Movie2", "shorter description", "Drama", 321, 2008, studio, actors);
 		movies.add(movie1);
 		movies.add(movie2);
 		MovieList list = new MovieList(movies);

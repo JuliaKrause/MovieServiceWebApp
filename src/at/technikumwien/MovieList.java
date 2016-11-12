@@ -12,6 +12,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 public class MovieList {
+	@XmlElementWrapper(name="movies")
 	@XmlElement(name="movie")
 	private List<Movie> MovieList;
 
@@ -22,6 +23,8 @@ public class MovieList {
 		MovieList = movieList;
 	}
 
+	@XmlElementWrapper(name="movies")
+	@XmlElement(name="movie")
 	public List<Movie> getMovieList() {
 		return MovieList;
 	}

@@ -17,6 +17,8 @@ import static javax.persistence.FetchType.EAGER;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
+//@XmlRootElement(name="movie")
+@XmlType(propOrder={"title", "description", "genre", "length", "releaseYear", "studio", "actorList"})
 
 public class Movie {
     @Id
@@ -32,6 +34,10 @@ public class Movie {
     @Basic
 	@XmlAttribute
     private String description;
+
+    @Basic
+    @XmlAttribute
+    private String genre;
 
     @Basic
 	@XmlAttribute
@@ -57,9 +63,10 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, String description, int length, int releaseYear, List<Actor> actorList, Studio studio) {
+    public Movie(String title, String description, String genre, int length, int releaseYear, Studio studio, List<Actor> actorList) {
         this.title = title;
         this.description = description;
+        this.genre = genre;
         this.length = length;
         this.releaseYear = releaseYear;
         this.actorList = actorList;
@@ -122,12 +129,21 @@ public class Movie {
         this.studio = studio;
     }
 
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
                 "movieId=" + movieId +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", genre='" + genre + '\'' +
                 ", length=" + length +
                 ", releaseYear=" + releaseYear +
                 ", actorList=" + actorList +
