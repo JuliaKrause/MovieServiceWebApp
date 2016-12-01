@@ -1,5 +1,6 @@
 package at.technikumwien.service;
 
+import at.technikumwien.MovieList;
 import at.technikumwien.entity.*;
 
 
@@ -44,8 +45,9 @@ public class MovieService {
     }
 
 
-    public void importMovies(List<Movie> movieList) {
-    	for(Movie movie : movieList) {
+    public void importMovies(MovieList movieList) {
+    	List<Movie> myMovieList = movieList.getMovieList();
+        for(Movie movie : myMovieList) {
             System.out.println("MOVIE IN IMPORT LIST " + movie.toString());
 
             as.checkActors(movie.getActorList());

@@ -12,8 +12,7 @@ import static javax.persistence.FetchType.EAGER;
 @Entity
 
 @NamedQueries({ @NamedQuery(name="Movie.selectAll", query="SELECT n FROM Movie n"),
-                @NamedQuery(name="Movie.findByTitleMov", query="SELECT n FROM Movie n WHERE n.title LIKE '%Mov%'")})
-
+        @NamedQuery(name="Movie.findByTitleMov", query="SELECT n FROM Movie n WHERE n.title LIKE '%Mov%'")})
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -23,16 +22,17 @@ import static javax.persistence.FetchType.EAGER;
 public class Movie {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-	@XmlTransient
-    private long movieId;
+    @XmlTransient
+    private Long movieId;
 
     @Basic
     @Column(nullable = false)
-	@XmlAttribute
+    @XmlAttribute
     private String title;
 
     @Basic
-	@XmlAttribute
+    @Column(length = 500)
+    @XmlAttribute
     private String description;
 
     @Basic
@@ -40,24 +40,24 @@ public class Movie {
     private String genre;
 
     @Basic
-	@XmlAttribute
+    @XmlAttribute
     private Integer length;
 
     @Basic
     @Column(nullable = false)
-	@XmlAttribute(name="releaseyear")
+    @XmlAttribute(name="releaseyear")
     private int releaseYear;
 
     //may also need "mapped by"
     @ManyToMany(targetEntity=Actor.class, fetch=EAGER)
     @Column(nullable = false)
-	@XmlElementWrapper(name="actors")
-	@XmlElement(name="actor")
+    @XmlElementWrapper(name="actors")
+    @XmlElement(name="actor")
     private List<Actor> actorList;
-    
+
     @ManyToOne
 
-	@XmlElement
+    @XmlElement
     private Studio studio;
 
     public Movie() {
@@ -73,11 +73,11 @@ public class Movie {
         this.studio = studio;
     }
 
-    public long getMovieId() {
+    public Long getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(long movieId) {
+    public void setMovieId(Long movieId) {
         this.movieId = movieId;
     }
 

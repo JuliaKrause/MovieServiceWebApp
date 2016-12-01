@@ -4,6 +4,7 @@ import at.technikumwien.MovieList;
 import at.technikumwien.entity.Movie;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public interface MovieWebService {
     MovieList getAllMovies();
 
     @WebMethod
-	void importMovies(List<Movie> movieList);
+	void importMovies(@WebParam(name="movies") MovieList movieList);
 	
 	@WebMethod
     MovieList searchMoviesByTitle(String String);

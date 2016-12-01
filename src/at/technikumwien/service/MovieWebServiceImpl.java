@@ -33,7 +33,7 @@ public class MovieWebServiceImpl implements MovieWebService {
     }
 
     @Override
-    public void importMovies(List<Movie> movieList) {
+    public void importMovies(MovieList movieList) {
 
 	/*XmlConverter converter = null;
 		try {

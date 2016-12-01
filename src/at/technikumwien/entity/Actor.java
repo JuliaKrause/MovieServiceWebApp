@@ -3,7 +3,6 @@ package at.technikumwien.entity;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
-
 import java.util.Date;
 
 /**
@@ -12,12 +11,16 @@ import java.util.Date;
 @Entity
 @Table
 
-@NamedQuery(name="Actor.select", query="Select a FROM Actor a WHERE a.firstName = :firstName and a.lastName = :lastName and a.sex = :sex and a.birthDate = :birthDate")
+@NamedQueries({ @NamedQuery(name="Actor.selectAll", query="SELECT a FROM Actor a"),
+        @NamedQuery(name="Actor.select", query="Select a FROM Actor a WHERE a.firstName = :firstName and a.lastName = :lastName and a.sex = :sex and a.birthDate = :birthDate")})
+
 @XmlType(propOrder={"firstName", "lastName", "sex", "birthDate"})
 public class Actor {
+
+    //does actor also have to be an xml root element? I don't think so
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long actorId;
+    private Long actorId;
 
     @Column(nullable = false)
     private String firstName;
@@ -34,24 +37,29 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String sex, Date birthDate) {
+    public Actor(Long actorId, String firstName, String lastName, String sex, Date birthDate) {
+        this.actorId = actorId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.sex = sex;
         this.birthDate = birthDate;
     }
 
-	@XmlTransient
-    public long getActorId() {
-        
-		return actorId;
-	}
+    public Actor(String firstName, String lastName, String sex, Date birthDate) {
+        this(null, firstName, lastName, sex, birthDate);
+    }
 
-    public void setActorId(long actorId) {
+    @XmlTransient
+    public Long getActorId() {
+
+        return actorId;
+    }
+
+    public void setActorId(Long actorId) {
         this.actorId = actorId;
     }
 
-	@XmlAttribute(name="firstname")
+    @XmlAttribute(name="firstname")
 
     public String getFirstName() {
         return firstName;
@@ -61,7 +69,7 @@ public class Actor {
         this.firstName = firstName;
     }
 
-	@XmlAttribute(name="lastname")   
+    @XmlAttribute(name="lastname")
     public String getLastName() {
         return lastName;
     }
@@ -70,7 +78,7 @@ public class Actor {
         this.lastName = lastName;
     }
 
-	@XmlAttribute(name="sex")
+    @XmlAttribute(name="sex")
     public String getSex() {
         return sex;
     }
@@ -79,7 +87,7 @@ public class Actor {
         this.sex = sex;
     }
 
-	@XmlAttribute(name="birthdate")
+    @XmlAttribute(name="birthdate")
     public Date getBirthDate() {
         return birthDate;
     }
@@ -91,8 +99,8 @@ public class Actor {
     @Override
     public String toString() {
         return "Actor{" +
-                
-				"actorId=" + actorId +
+
+                "actorId=" + actorId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", sex='" + sex + '\'' +

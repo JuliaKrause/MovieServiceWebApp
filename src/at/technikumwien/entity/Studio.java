@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.*;
 public class Studio {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long studioId;
+    private Long studioId;
 
     @Column(nullable=false)
     private String name;
@@ -30,18 +30,23 @@ public class Studio {
     public Studio() {
     }
 
-    public Studio(String name, String countryCode, String postCode) {
+    public Studio(Long studioId, String name, String countryCode, String postCode) {
+        this.studioId = studioId;
         this.name = name;
         this.countryCode = countryCode;
         this.postCode = postCode;
     }
 
-	@XmlTransient
-    public long getStudioId() {
+    public Studio(String name, String countryCode, String postCode) {
+        this(null, name, countryCode, postCode);
+    }
+
+    @XmlTransient
+    public Long getStudioId() {
         return studioId;
     }
 
-    public void setStudioId(long studioId) {
+    public void setStudioId(Long studioId) {
         this.studioId = studioId;
     }
 
