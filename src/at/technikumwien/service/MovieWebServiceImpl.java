@@ -43,6 +43,7 @@ public class MovieWebServiceImpl implements MovieWebService {
 		}
 		MovieList movielist = converter.convertToMovieList(xml);*/
         //service.importMovies(movielist.getMovieList());
+        System.out.println("HUCH");
         service.importMovies(movieList);
 	}
 

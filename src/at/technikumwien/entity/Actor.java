@@ -2,6 +2,7 @@ package at.technikumwien.entity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import java.util.Date;
 
