@@ -15,21 +15,15 @@ public class Main {
         //stopping this now because I think it makes more sense to have a client to test this
         //then the question still is: how do we get the JSON input?
 
-        /*ActorResource ar = new ActorResource();
+        ActorResource ar = new ActorResource();
         Calendar cal = Calendar.getInstance();
         cal.set(1949, 12, 04);
         Date bd = cal.getTime();
         System.out.println(bd);
         Actor actor = new Actor("John", "Doe", "MALE", bd);
 
-        ObjectMapper mapper = new ObjectMapper();
 
-        //Object to JSON in file
-        //mapper.writeValue(new File("c:\\file.json"), obj);
-
-        //Object to JSON in String
-        String jsonInString = mapper.writeValueAsString(actor);
-        Response response = ar.createActor(jsonInString);
-        System.out.println(response);*/
+        //Response response = ar.createActor(jsonInString);
+        //System.out.println(response);
     }
 }
