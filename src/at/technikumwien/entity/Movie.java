@@ -11,8 +11,8 @@ import static javax.persistence.FetchType.EAGER;
  */
 @Entity
 
-@NamedQueries({ @NamedQuery(name="Movie.selectAll", query="SELECT n FROM Movie n"),
-        @NamedQuery(name="Movie.findByTitleMov", query="SELECT n FROM Movie n WHERE n.title LIKE '%Mov%'")})
+@NamedQueries({ @NamedQuery(name="Movie.selectAll", query="SELECT m FROM Movie m"),
+        @NamedQuery(name="Movie.findByTitleMov", query="SELECT m FROM Movie m WHERE m.title LIKE '%Mov%'")})
 
 
 @XmlAccessorType(XmlAccessType.FIELD)

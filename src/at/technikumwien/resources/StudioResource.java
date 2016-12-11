@@ -30,8 +30,7 @@ import javax.ws.rs.core.UriInfo;
 public class StudioResource {
     @Inject
     private StudioService studioService;
-    @PersistenceContext
-    private EntityManager em;
+
     @Context
     private UriInfo ui;
 
@@ -44,13 +43,6 @@ public class StudioResource {
         return Response.created(studioURI).build();
     }
 
-    @PUT
-    @Path("/{studioId}")
-    @Consumes({MediaType.APPLICATION_JSON})
-    public void updateStudio(@PathParam("studioId") Long studioId, Studio studio) {
-        studioService.updateStudio(studio, studioId);
-    }
-
     /*@GET
     @Path("/{studioId}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -59,24 +51,31 @@ public class StudioResource {
         return (studio != null ? studio.toString() : null);
     }*/
 
-    /*@GET
+    @GET
     @Path("/{studioId}")
     @Produces({MediaType.APPLICATION_JSON})
     public Studio getStudioAsJSON(@PathParam("studioId") Long studioId) {
-        return em.find(Studio.class, studioId);
-    }*/
+        return studioService.getStudio(studioId);
+    }
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public List<Studio> getAllStudios() {
+
         return studioService.getAllStudios();
+    }
+
+    @PUT
+    @Path("/{studioId}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void updateStudio(@PathParam("studioId") Long studioId, Studio studio) {
+        studioService.updateStudio(studio, studioId);
     }
 
     @DELETE
     @Path("/{studioId}")
     @Consumes({MediaType.APPLICATION_JSON})
-    public void deleteStudio(@PathParam("studioId") Long studioId, Studio studio) {
-        //not sure what I would need parameter studio for
+    public void deleteStudio(@PathParam("studioId") Long studioId) {
         studioService.deleteStudio(studioId);
     }
 

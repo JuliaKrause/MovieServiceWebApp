@@ -1,9 +1,11 @@
 package at.technikumwien.service;
 
+import at.technikumwien.entity.Movie;
 import at.technikumwien.entity.Studio;
 
 import javax.ejb.EJBException;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -17,6 +19,9 @@ import java.util.List;
 @Stateless
 public class StudioService {
 
+	@Inject
+	private MovieService ms;
+
 	@PersistenceContext
 	private EntityManager em;
 
@@ -28,10 +33,17 @@ public class StudioService {
 
 	}
 
+	//CREATE
 	public void importStudio(Studio studio) {
 		em.persist(studio);
 	}
 
+	//READ
+	public Studio getStudio(Long studioId) {
+		return em.find(Studio.class, studioId);
+	}
+
+	//UPDATE
 	//so this is going to use the em.find method, which might have been a shorter way of checking the studio before :-)
 	public void updateStudio(Studio studio, Long studioId) {
 		Studio studioOld = em.find(Studio.class, studioId);
@@ -39,27 +51,39 @@ public class StudioService {
 			studioOld.setName(studio.getName());
 			studioOld.setCountryCode(studio.getCountryCode());
 			studioOld.setPostCode(studio.getPostCode());
-			//TODO: not sure if this needs this or an em.edit(studio) or if this line is not necessary at all:
-			em.persist(studioOld);
+			//anscheinen braucht man hier KEIN em.persist oder Ähnliches
 		} else {
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}
 
 	}
 
-	//same here... :-)
+	//DELETE
 	public void deleteStudio(Long studioId) {
 		Studio studioOld = em.find(Studio.class, studioId);
 		if(studioOld != null) {
-			//TODO: I'm sure I'm not allowed to delete a studio if there is a movie that has its ID as a foreign key
-			//TODO: does the db take care of that or what?
-			em.remove(studioOld);
+			Boolean deleteOK = true;
+			List<Movie> movieList = ms.getAllMovies();
+			for(Movie movie : movieList) {
+				if (movie.getStudio().getStudioId() == studioId) {
+					deleteOK = false;
+					break;
+				}
+			}
+
+			if(deleteOK) {
+				em.remove(studioOld);
+			} else {
+				throw new EJBException("CANNOT DELETE STUDIO BECAUSE OF FOREIGN KEY CONSTRAINT");
+			}
 		} else {
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}
 	}
 
 
+	//HELPER METHODS FOR CREATING MOVIE
+	//TODO: INSTEAD OF THIS, USE EM.FIND HERE AS WELL
 	public Studio getStudioFromDB (Studio studio) {
 		Query query = em.createNamedQuery("Studio.select", Studio.class)
 				.setParameter("name", studio.getName())
@@ -70,6 +94,7 @@ public class StudioService {
 
 		return studioFromDB;
 	}
+
 
 	public Studio checkStudio(Studio studio) {
 		if(!existsStudio(studio)) {

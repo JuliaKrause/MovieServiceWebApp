@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.*;
 
 @Entity
 
-@NamedQuery(name="Studio.select", query="Select s FROM Studio s WHERE s.name = :name and s.countryCode = :countryCode and s.postCode = :postCode")
+@NamedQueries({ @NamedQuery(name="Studio.selectAll", query="SELECT s FROM Studio s"),
+    @NamedQuery(name="Studio.select", query="Select s FROM Studio s WHERE s.name = :name and s.countryCode = :countryCode and s.postCode = :postCode")})
+
 @XmlType(propOrder = {"name", "countryCode", "postCode"})
 public class Studio {
     @Id

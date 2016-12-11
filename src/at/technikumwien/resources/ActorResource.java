@@ -6,6 +6,7 @@ import at.technikumwien.service.ActorService;
 import java.net.URI;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -26,27 +27,21 @@ import javax.ws.rs.core.UriInfo;
 @Path("/actor")
 @Transactional
 public class ActorResource {
+
     @Inject
-    private ActorService actorService;
-    @PersistenceContext
-    private EntityManager em;
+    ActorService as;
+
     @Context
     private UriInfo ui;
 
+    public ActorResource() {}
 
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     public Response createActor(Actor actor) {
-        actorService.importActor(actor);
-        URI studioURI = ui.getAbsolutePathBuilder().path(actor.getActorId().toString()).build();
-        return Response.created(studioURI).build();
-    }
-
-    @PUT
-    @Path("/{actorId}")
-    @Consumes({MediaType.APPLICATION_JSON})
-    public void updateActor(@PathParam("actorId") Long actorId, Actor actor) {
-        actorService.updateActor(actor, actorId);
+        as.importActor(actor);
+        URI actorURI = ui.getAbsolutePathBuilder().path(actor.getActorId().toString()).build();
+        return Response.created(actorURI).build();
     }
 
     /*@GET
@@ -57,25 +52,32 @@ public class ActorResource {
         return (studio != null ? studio.toString() : null);
     }*/
 
-    /*@GET
-    @Path("/{studioId}")
+    @GET
+    @Path("/{actorId}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Studio getStudioAsJSON(@PathParam("studioId") Long studioId) {
-        return em.find(Studio.class, studioId);
-    }*/
+    public Actor getActorAsJSON(@PathParam("actorId") Long actorId) {
+        return as.getActor(actorId);
+    }
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public List<Actor> getAllActors() {
-        return actorService.getAllActors();
+
+        return as.getAllActors();
+    }
+
+    @PUT
+    @Path("/{actorId}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void updateActor(@PathParam("actorId") Long actorId, Actor actor) {
+        as.updateActor(actor, actorId);
     }
 
     @DELETE
     @Path("/{actorId}")
     @Consumes({MediaType.APPLICATION_JSON})
-    public void deleteActor(@PathParam("actorId") Long actorId, Actor actor) {
-        //not sure what I would need parameter actor for
-        actorService.deleteActor(actorId);
+    public void deleteActor(@PathParam("actorId") Long actorId) {
+        as.deleteActor(actorId);
     }
 
 
