@@ -2,9 +2,10 @@ package at.technikumwien.service;
 
 import at.technikumwien.MovieList;
 import at.technikumwien.entity.*;
+import org.jboss.ejb3.annotation.SecurityDomain;
 
 
-
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -18,6 +19,9 @@ import java.util.List;
  */
 //transaktionen etc kommt hierher. also alles, was mit der db direkt zu tun hat.
 @Stateless
+//@SecurityDomain("MoviesSD")
+//@RolesAllowed("MoviesUser")
+
 public class MovieService {
 
     @PersistenceContext
@@ -29,6 +33,7 @@ public class MovieService {
     @Inject
     private StudioService ss;
 
+    //TODO: SessionContext und LOGGER siehe NewsWeabApp2
     public List<Movie> getAllMovies() {
         /*System.out.println("**********************************************************");
         System.out.println(em.toString());

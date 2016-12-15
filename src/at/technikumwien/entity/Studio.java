@@ -43,7 +43,7 @@ public class Studio {
         this(null, name, countryCode, postCode);
     }
 
-    @XmlTransient
+    @XmlAttribute
     public Long getStudioId() {
         return studioId;
     }

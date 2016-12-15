@@ -61,8 +61,9 @@ public class StudioResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public List<Studio> getAllStudios() {
-
-        return studioService.getAllStudios();
+        List<Studio> resultList = studioService.getAllStudios();
+        System.out.println(resultList.get(0).getStudioId());
+        return resultList;
     }
 
     @PUT

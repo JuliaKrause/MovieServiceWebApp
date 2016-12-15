@@ -2,15 +2,18 @@ package at.technikumwien.service;
 
 import at.technikumwien.entity.Movie;
 import at.technikumwien.entity.Studio;
+import at.technikumwien.resources.StudioFilterInterceptor;
 
 import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,9 +31,12 @@ public class StudioService {
 	public StudioService() {
 	}
 
+	@Interceptors(StudioFilterInterceptor.class)
 	public List<Studio> getAllStudios() {
+		//LOGGER.info("getAllStudios() called");
+		//LOGGER.debugf("> user=%s", ctx.getCallerPrincipal());
+		//LOGGER.debugf("> inRole('MovieUser')=%b", ctx.isCallerInRole("MovieUser"));
 		return em.createNamedQuery("Studio.selectAll", Studio.class).getResultList();
-
 	}
 
 	//CREATE
