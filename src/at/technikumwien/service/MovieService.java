@@ -2,13 +2,17 @@ package at.technikumwien.service;
 
 import at.technikumwien.MovieList;
 import at.technikumwien.entity.*;
+import at.technikumwien.resources.MoviesFilterInterceptor;
 import org.jboss.ejb3.annotation.SecurityDomain;
 
 
+import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJBException;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Date;
@@ -19,9 +23,7 @@ import java.util.List;
  */
 //transaktionen etc kommt hierher. also alles, was mit der db direkt zu tun hat.
 @Stateless
-//@SecurityDomain("MoviesSD")
-//@RolesAllowed("MoviesUser")
-
+@SecurityDomain("MoviesSD")
 public class MovieService {
 
     @PersistenceContext
@@ -33,23 +35,29 @@ public class MovieService {
     @Inject
     private StudioService ss;
 
-    //TODO: SessionContext und LOGGER siehe NewsWeabApp2
+    //@Resource
+    //private SessionContext ctx;
+
+
+    @RolesAllowed("BSRead")
+    @Interceptors(MoviesFilterInterceptor.class)
     public List<Movie> getAllMovies() {
         /*System.out.println("**********************************************************");
         System.out.println(em.toString());
         System.out.println(em.getEntityManagerFactory());
         System.out.println("**********************************************************");*/
-        System.out.println("THIS IS THE GETALLMOVIES-METHOD IN MOVIESERVICE!!!");
+        //System.out.println("THIS IS THE GETALLMOVIES-METHOD IN MOVIESERVICE!!!");
         return em.createNamedQuery("Movie.selectAll", Movie.class).getResultList();
 
     }
 
+    @RolesAllowed("BSRead")
     public List<Movie> searchMoviesByTitle(String searchString) {
         System.out.println("THIS IS THE SEARCHMOVIESBYTITLE-METHOD IN MOVIESERVICE!!!");
         return em.createQuery("SELECT n FROM Movie n WHERE n.title LIKE '%" + searchString + "%'").getResultList();
     }
 
-
+    @RolesAllowed("BSWrite")
     public void importMovies(MovieList movieList) {
     	List<Movie> myMovieList = movieList.getMovieList();
         for(Movie movie : myMovieList) {

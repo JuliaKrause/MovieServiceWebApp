@@ -2,8 +2,11 @@ package at.technikumwien.service;
 
 import at.technikumwien.entity.Movie;
 import at.technikumwien.entity.Studio;
+import at.technikumwien.resources.MoviesFilterInterceptor;
 import at.technikumwien.resources.StudioFilterInterceptor;
+import org.jboss.ejb3.annotation.SecurityDomain;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -20,6 +23,7 @@ import java.util.List;
  * Created by regula on 02.11.16.
  */
 @Stateless
+@SecurityDomain("MoviesSD")
 public class StudioService {
 
 	@Inject
@@ -31,6 +35,7 @@ public class StudioService {
 	public StudioService() {
 	}
 
+	@RolesAllowed("BSRead")
 	@Interceptors(StudioFilterInterceptor.class)
 	public List<Studio> getAllStudios() {
 		//LOGGER.info("getAllStudios() called");
@@ -40,17 +45,20 @@ public class StudioService {
 	}
 
 	//CREATE
-	public void importStudio(Studio studio) {
+    @RolesAllowed("BSWrite")
+    public void importStudio(Studio studio) {
 		em.persist(studio);
 	}
 
 	//READ
+    @RolesAllowed("BSRead")
 	public Studio getStudio(Long studioId) {
 		return em.find(Studio.class, studioId);
 	}
 
 	//UPDATE
 	//so this is going to use the em.find method, which might have been a shorter way of checking the studio before :-)
+    @RolesAllowed("BSWrite")
 	public void updateStudio(Studio studio, Long studioId) {
 		Studio studioOld = em.find(Studio.class, studioId);
 		if(studioOld != null) {
@@ -65,7 +73,8 @@ public class StudioService {
 	}
 
 	//DELETE
-	public void deleteStudio(Long studioId) {
+    @RolesAllowed("BSWrite")
+    public void deleteStudio(Long studioId) {
 		Studio studioOld = em.find(Studio.class, studioId);
 		if(studioOld != null) {
 			Boolean deleteOK = true;

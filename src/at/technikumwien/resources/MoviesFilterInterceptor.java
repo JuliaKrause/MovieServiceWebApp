@@ -5,20 +5,18 @@ import javax.interceptor.InvocationContext;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-//import org.jboss.logging.Logger;
-
 /**
- * Created by Julia on 05.12.2016.
+ * Created by Julia on 06.01.2017.
  */
-public class StudioFilterInterceptor {
+public class MoviesFilterInterceptor {
     //private static final Logger LOGGER = Logger.getLogger(StudioFilterInterceptor.class);
-	private static final int MAX_SIZE = 4;
+    private static final int MAX_SIZE = 5;
 
     @AroundInvoke
     public Object filter(InvocationContext ic) throws Exception {
-		//LOGGER.info("filter() called");
-		//LOGGER.debugf("> method=%s", ic.getMethod().getName());
-		
+        //LOGGER.info("filter() called");
+        //LOGGER.debugf("> method=%s", ic.getMethod().getName());
+
         Object result = ic.proceed();
         if(result instanceof Collection) {
             Collection<?> collection = (Collection<?>) result;
@@ -31,4 +29,5 @@ public class StudioFilterInterceptor {
             return result;
         }
     }
+
 }
