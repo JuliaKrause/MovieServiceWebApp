@@ -15,4 +15,33 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Movies</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method-omission>OPTIONS</http-method-omission>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>BSRead</role-name>
+            <role-name>BSWrite</role-name>
+            <role-name>BSOther</role-name>
+
+        </auth-constraint>
+    </security-constraint>
+
+    <security-role>
+        <role-name>BSRead</role-name>
+    </security-role>
+    <security-role>
+        <role-name>BSWrite</role-name>
+    </security-role>
+    <security-role>
+        <role-name>BSOther</role-name>
+    </security-role>
+
+
 </web-app>
