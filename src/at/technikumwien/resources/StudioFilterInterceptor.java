@@ -19,7 +19,6 @@ public class StudioFilterInterceptor {
 		//LOGGER.info("filter() called");
 		//LOGGER.debugf("> method=%s", ic.getMethod().getName());
 		
-        //wir wollen immer nur die ersten drei Studio-Einträge
         Object result = ic.proceed();
         if(result instanceof Collection) {
             Collection<?> collection = (Collection<?>) result;
