@@ -2,11 +2,15 @@ package at.technikumwien.service;
 
 import at.technikumwien.entity.Actor;
 import at.technikumwien.entity.Movie;
+import at.technikumwien.resources.ActorFilterInterceptor;
 import at.technikumwien.resources.ActorResource;
+import org.jboss.ejb3.annotation.SecurityDomain;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,6 +23,7 @@ import java.util.List;
  * Created by regula on 02.11.16.
  */
 @Stateless
+@SecurityDomain("MoviesSD")
 public class ActorService {
 
     @Inject
@@ -30,23 +35,28 @@ public class ActorService {
     public ActorService() {
     }
 
+    @RolesAllowed("BSRead")
+    @Interceptors(ActorFilterInterceptor.class)
     public List<Actor> getAllActors() {
         return em.createNamedQuery("Actor.selectAll", Actor.class).getResultList();
 
     }
 
     //CREATE
+    @RolesAllowed("BSWrite")
     public void importActor(Actor actor) {
         em.persist(actor);
     }
 
     //READ
+    @RolesAllowed("BSRead")
     public Actor getActor(Long actorId) {
         return em.find(Actor.class, actorId);
     }
 
     //UPDATE
     //so this is going to use the em.find method, which might have been a shorter way of checking the studio before :-)
+    @RolesAllowed("BSWrite")
     public void updateActor(Actor actor, Long actorId) {
         Actor actorOld = em.find(Actor.class, actorId);
         if(actorOld != null) {
@@ -61,6 +71,7 @@ public class ActorService {
     }
 
     //DELETE
+    @RolesAllowed("BSWrite")
     public void deleteActor(Long actorId) {
         Actor actorOld = em.find(Actor.class, actorId);
         if(actorOld != null) {
@@ -92,7 +103,7 @@ public class ActorService {
 
 
     //HELPER METHODS FOR CREATING MOVIE
-    //TODO: INSTEAD OF THIS, USE EM.FIND HERE AS WELL
+    @RolesAllowed("BSRead")
     public Actor getActorFromDB (Actor actor) {
         Query query = em.createNamedQuery("Actor.select", Actor.class)
                 .setParameter("firstName", actor.getFirstName())
@@ -105,6 +116,7 @@ public class ActorService {
         return actorFromDB;
     }
 
+    @RolesAllowed("BSRead")
     public void checkActors(List<Actor> actorList) {
         for (Actor actor : actorList) {
             if(!existsActor(actor)){
@@ -116,6 +128,7 @@ public class ActorService {
         }
     }
 
+    @RolesAllowed("BSRead")
     public Boolean existsActor(Actor actor) {
         Query query = em.createNamedQuery("Actor.select", Actor.class)
                 .setParameter("firstName", actor.getFirstName())

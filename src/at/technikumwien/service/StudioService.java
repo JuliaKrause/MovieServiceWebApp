@@ -98,7 +98,7 @@ public class StudioService {
 
 
 	//HELPER METHODS FOR CREATING MOVIE
-	//TODO: INSTEAD OF THIS, USE EM.FIND HERE AS WELL
+    @RolesAllowed("BSRead")
 	public Studio getStudioFromDB (Studio studio) {
 		Query query = em.createNamedQuery("Studio.select", Studio.class)
 				.setParameter("name", studio.getName())
@@ -110,7 +110,7 @@ public class StudioService {
 		return studioFromDB;
 	}
 
-
+    @RolesAllowed("BSRead")
 	public Studio checkStudio(Studio studio) {
 		if(!existsStudio(studio)) {
 			throw new EJBException("can't find studio");
@@ -120,7 +120,7 @@ public class StudioService {
 		}
 	}
 
-
+    @RolesAllowed("BSRead")
 	public Boolean existsStudio(Studio studio) {
 		Query query = em.createNamedQuery("Studio.select", Studio.class)
 				.setParameter("name", studio.getName())
